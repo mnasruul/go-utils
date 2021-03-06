@@ -2,7 +2,7 @@ package jwt_utils
 
 import "github.com/dgrijalva/jwt-go"
 
-func getToken(input interface{},secretKey string) (string, error)  {
+func GetToken(input interface{},secretKey string) (string, error)  {
 	signingKey := []byte(secretKey)
  	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{"claims":input})
  	tokenString, err := token.SignedString(signingKey)
